@@ -1,29 +1,21 @@
-// import { Heading } from 'lucide-react'
-import { Box, Button, Card, Center, Flex, Heading, Image, Span, Stack, Text } from "@chakra-ui/react"
-import { Link } from "react-router"
-import { useColorMode } from "./ui/color-mode"
-import { useState } from "react";
-import { ArrowRight, Star } from "lucide-react";
-import { FaStar } from "react-icons/fa";
-import { CgProfile } from "react-icons/cg";
+import { Box, Card, Flex, Heading, Image, Span, Stack, Text } from "@chakra-ui/react";
 import { MdOutlineCalendarToday } from "react-icons/md";
+import { CgProfile } from "react-icons/cg";
+import { Link } from "react-router";
+
+
 export default function BlogCard({ blog }) {
 
-  const url = blog.image.formats.thumbnail.url;
   return (
-
       
     <Card.Root as={Link} to={`/blog/${blog.id}`} p={'4px'} overflow="hidden" zIndex={1} maxW={'330px'} borderRadius={'10px'} bg={'#fff'} border={'1px solid #B5B5C3'} transition={'.5s'} _hover={{boxShadow: "rgb(202, 201, 214) 10px 10px" }} >
       <Card.Body gap={2} p={4} >
         <Box position={'relative'} > 
           <Image
-            src={`${import.meta.env.VITE_SERVER_URL}${url}`}
+            src={blog.image}
             alt="Green double couch with wooden legs"
             borderRadius={'15px'}
-            // width={'200px'}
-            // height={'200px'}
             w={'full'}
-            // mx={'auto'}
             objectFit={'cover'}
           />
           <Text 

@@ -16,15 +16,15 @@ import {
   Progress,
   Icon,
 } from '@chakra-ui/react';
-import { useColorModeValue } from '../ui/color-mode';
-import mark from '../../assets/mark.png'
+import { useColorModeValue } from '@/components/ui/color-mode';
+import mark from '../../assets/instructors/mark.png'
 // TabButton Component
 
 import { FaFacebookF, FaInstagram, FaStar, FaWhatsapp } from 'react-icons/fa';
 import { MdKeyboardArrowRight, MdPlayArrow } from 'react-icons/md';
 import { FaXTwitter } from 'react-icons/fa6';
 
-function TabButton({ id, title, isActive, onClick }) {
+function TabButton({ title, isActive, onClick }) {
   return (
     <Button
       w={'fit'}

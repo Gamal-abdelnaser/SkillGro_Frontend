@@ -12,9 +12,9 @@ import {
   HStack,
 } from '@chakra-ui/react'
 import { FaStar } from 'react-icons/fa'
-import testim1 from '../assets/testim1.png';
-import testim2 from '../assets/testim2.png';
-import testim3 from '../assets/testim3.png';
+import testim1 from '../assets/testimonials/testim1.png';
+import testim2 from '../assets/testimonials/testim2.png';
+import testim3 from '../assets/testimonials/testim3.png';
 
 const Testimonial = (props) => {
   const { children } = props

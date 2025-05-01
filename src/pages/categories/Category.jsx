@@ -1,5 +1,4 @@
-import Carousel from '@/components/carousel';
-import { useColorModeValue } from '@/components/ui/color-mode';
+import Carousel from '@/pages/categories/carousel';
 import { Box, Container, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 import React from 'react'
 

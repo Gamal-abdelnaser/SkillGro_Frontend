@@ -1,12 +1,9 @@
 
-import { useColorModeValue } from '@/components/ui/color-mode';
 import { Box, Button, Checkbox, Container, Field, Flex, Group, Heading, Image, Input, Span, Stack, Text } from '@chakra-ui/react';
 import React, { useState } from 'react'
 import man from '../assets/man.png'
 import line from '../assets/lineMoved.png'
-import banner from '../assets/banner_shape01.svg'
 import kosah from '../assets/kosah.png'
-import boxDot from '../assets/box-dot.png'
 import { PiDotsNineLight } from 'react-icons/pi';
 import { RxDragHandleDots1 } from 'react-icons/rx';
 
@@ -48,7 +45,7 @@ import { RxDragHandleDots1 } from 'react-icons/rx';
 
           <Flex flex={2} w={'full'} className='ngng' gap={2} direction={'column'} alignItems={'center'} 
           justifyContent={'center'} >     
-              <Heading className='altnttext' fontSize={'38px'} w={'full'} lineHeight={1.5} _firstLetter={'uppercase'} color={'#fff'} fontWeight={'400'} >
+              <Heading className='altnttext' fontSize={'38px'} w={'full'} lineHeight={1.5}  color={'#fff'} fontWeight={'400'} >
               Want To Stay <Span fontWeight={'700'}>Informed</Span> About <br /> New <Span fontWeight={'700'}> Courses & Study?</Span>
               </Heading>
               

@@ -1,7 +1,7 @@
 //Left Container
 import { AspectRatio, Box, Button, Container, Flex, Grid, Heading, HStack, Icon, IconButton, Image, Link, List, SimpleGrid, Span, Stack, Text, VStack } from '@chakra-ui/react';
 // import courseDatils from './assets/courseDtails.jpg'
-import courseDat from '../../assets/courseDtails.jpg';
+import courseDat from '../../assets/courses/courseDtails.jpg';
 import person from '../../assets/persn.png'
 
 import { FaStar } from 'react-icons/fa';

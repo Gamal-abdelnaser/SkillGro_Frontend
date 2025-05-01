@@ -4,16 +4,11 @@ import {
   Box,
   Flex,
   Text,
-  IconButton,
-  Button,
   Stack,
   Icon,
   Popover,
-  Collapsible,
-  useDisclosure,
   Image,
   InputGroup,
-  Kbd,
   Input,
   Span,
   Drawer,
@@ -34,7 +29,6 @@ import { BsCart2 } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 export default function Navbar() {
 
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <Flex  w={'100%'} position={'relative'} zIndex={100} bg={'black'} >
       <Box zIndex={100} w={'100%'} bg={useColorModeValue('white', 'gray.800')} display={'flex'} justifyContent={'center'} alignItems={'center'}  boxShadow={'lg'} position={'fixed'} top={0} left={0} >
@@ -92,7 +86,9 @@ export default function Navbar() {
               </Box>
               
               <ProfileButton/>
-              <Demo />
+              <Stack display={{ base: 'block', md: 'none' }}>
+                <Demo />
+              </Stack>
             </Stack>
 
         </Flex>
@@ -356,7 +352,7 @@ const Demo = () => {
   const [open, setOpen] = useState(false)
 
   return (
-    <Drawer.Root open={open} onOpenChange={(e) => setOpen(e.open)}>
+    <Drawer.Root open={open} onOpenChange={(e) => setOpen(e.open)} >
       <Drawer.Trigger asChild cursor={'pointer'}>
         {/* <Button bg={'none'} w={'fit'} h={'fit'} p={0} outline={'none'} size="xl">
           <FiGrid size={60} color='#5751e1' />

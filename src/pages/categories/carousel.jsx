@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight, Smartphone, PenTool, PieChart, Code, Mail, Briefcase, Users } from 'lucide-react';
+import { ChevronLeft, ChevronRight} from 'lucide-react';
 import { Button, Stack, Text } from '@chakra-ui/react';
-import icon1 from'../assets/icons/curve.png'
-import icon2 from'../assets/icons/needs.png'
-import icon3 from'../assets/icons/planning.png'
-import icon4 from'../assets/icons/social-media-marketing.png'
-import icon5 from'../assets/icons/stats.png'
-import icon6 from'../assets/icons/ui-design.png'
-import icon7 from'../assets/icons/web-programming.png'
-import star from'../assets/icons/cat_star.svg'
+import icon1 from'../../assets/icons/curve.png'
+import icon2 from'../../assets/icons/needs.png'
+import icon3 from'../../assets/icons/planning.png'
+import icon4 from'../../assets/icons/social-media-marketing.png'
+import icon5 from'../../assets/icons/stats.png'
+import icon6 from'../../assets/icons/ui-design.png'
+import icon7 from'../../assets/icons/web-programming.png'
+// import star from'../assets/icons/cat_star.svg'
 import { Link } from 'react-router-dom';
 
 function useVisibleItems(containerRef, itemMinWidth = 200) {

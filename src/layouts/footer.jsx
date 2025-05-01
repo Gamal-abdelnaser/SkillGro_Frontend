@@ -14,17 +14,11 @@ import {
   Image,
   Wrap,
   Icon,
+  Span,
 } from '@chakra-ui/react';
-import {
 
-  MapIcon as WhatsappIcon,
-  GraduationCap,
-  PlayCircle,
-  Apple,
-} from 'lucide-react';
 import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp, FaYoutube } from 'react-icons/fa';
 import footerImage from '../assets/footerImage.svg';
-import apple from '../assets/apple.svg';
 import google from '../assets/google.svg';
 
 
@@ -62,7 +56,7 @@ const socialLinks = [
 
 function Footer() {
   return (
-    <Flex w={'100%'}z bg="#06042e" h={'auto'} alignItems={'center'} pt={'100px'} justifyContent={'center'} direction="column">
+    <Flex w={'100%'} bg="#06042e" h={'auto'} alignItems={'center'} pt={'100px'} justifyContent={'center'} direction="column">
       <Flex maxW={'1500px'}  w={'100%'} justifyContent={'center'} alignItems={'center'} direction="column">
      
         <Stack w={'100%'} direction="column">
@@ -90,10 +84,9 @@ function Footer() {
                   <Box key={index} gap={8}>
                     <Text 
                       position={'relative'}
-                      
-                    fontSize="22px" fontWeight="semibold" color="white" mb={6}>
+                      fontSize="22px" fontWeight="semibold" color="white" mb={6}>
                       {section.title}
-                      <Stack position={'absolute'} bottom={'-10px'} left={0} w={'20px'} bg={'#5751e1'} h={'4px'} borderRadius={'30px'}></Stack>
+                      <Span position={'absolute'} bottom={'-10px'} left={0} w={'20px'} bg={'#5751e1'} h={'4px'} borderRadius={'30px'}></Span>
                     </Text>
                     <VStack align="start" gap={4} >
                       {section.links.map((link, idx) => (
@@ -117,7 +110,7 @@ function Footer() {
                 <Box>
                   <Text position={'relative'} fontSize="22px" fontWeight="semibold" color="white" mb={6}>
                     Get In Touch
-                    <Stack position={'absolute'} bottom={'-10px'} left={0} w={'20%'} bg={'#5751e1'} h={'4px'} borderRadius={'30px'}></Stack>
+                    <Span position={'absolute'} bottom={'-10px'} left={0} w={'20%'} bg={'#5751e1'} h={'4px'} borderRadius={'30px'}></Span>
                   </Text>
                   <Text mb={6} w={'60%'}>
                     when an unknown printer took galley type and scrambled

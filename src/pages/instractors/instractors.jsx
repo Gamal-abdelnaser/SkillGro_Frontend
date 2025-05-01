@@ -1,39 +1,15 @@
-import TeamMemberCard from '@/components/instructorsCard';
+import TeamMemberCard from '@/pages/instractors/instructorsCard';
 import { Box, Button, Center, Flex, Grid, Heading, Image, Stack, Text } from '@chakra-ui/react';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-import arrow2 from '../assets/arrow2.gif'
+import arrow2 from '../../assets/arrow2.gif'
 import React from 'react'
+import { instructors } from '@/utilitis/data';
 
  const Instractors = () => {
-   const getProductList = async () => {
-     const { data } = await axios.get(
-       `${import.meta.env.VITE_SERVER_URL}/api/Instructors?populate=image`
-     );
-     return data; // Ensure API structure is correct
-   };
 
-   const { isLoading, data, } = useQuery({
-     queryKey: ["instructors"],
-     queryFn: getProductList
-   });
-
-   // if (isLoading) return <h3>Loading...</h3>;
-   if (isLoading) return <div>
-     <Grid templateColumns="repeat(auto-fill, minmax(300px, 1fr))" gap={6} margin={30}>
-       {Array.from({ length: 20 }, (_, idx) => (
-         //  <Skelaton key={idx} />
-         <div key={idx}></div>
-
-       )
-       )}
-
-     </Grid>
-   </div>
-   const resData = data?.data;
+  const resData = instructors;
    
   return (
-    // <Stack className={'coursess'} mx={'auto'} w={'100%'}>
+
     <Box bg="none"  display={'flex'} justifyContent={'center'} alignItems={'center'} mx={'auto'} w={'100%'} pb={{ base: '200px', md: '150px' }}>
       <Flex maxW={'1500px'} w={'100%'}  justifyContent={'center'} alignItems={'center'} >
         
@@ -108,7 +84,6 @@ import React from 'react'
         </Box>
       </Flex>
     </Box>
-    // </Stack>
   )
 }
 export default Instractors;

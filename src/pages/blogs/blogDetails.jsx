@@ -1,25 +1,21 @@
 'use client'
 
-import {  useColorModeValue } from '@/components/ui/color-mode';
-import { AspectRatio, Box, Button, Checkbox, Flex, Grid, GridItem, Heading,  IconButton,  Image, Input, InputGroup, Portal, Select, Span, Stack, Text, VStack } from '@chakra-ui/react';
-import { HStack, Icon, List, SimpleGrid } from '@chakra-ui/react';
+import { AspectRatio, Box, Icon,Button, Flex,  Heading,  IconButton,  Image, Input, InputGroup, Portal, Select, Span, Stack, Text, VStack } from '@chakra-ui/react';
 
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import { IoIosArrowForward, IoIosSearch } from 'react-icons/io';
+import { IoIosArrowForward } from 'react-icons/io';
 import { Link, useParams } from 'react-router-dom';
 import { MdKeyboardArrowRight, MdOutlineCalendarToday } from 'react-icons/md';
-import { PiStudent } from 'react-icons/pi';
-import { FaFacebook, FaInstagram, FaQuoteRight, FaStar, FaTwitter, FaWhatsapp, FaYoutube } from 'react-icons/fa';
-
-import { useEffect, useState } from 'react';
+import {  FaQuoteRight } from 'react-icons/fa';
+import { useEffect } from 'react';
 import { BiBookAlt, BiCertification, BiCheckShield, BiSearch, BiSolidBarChartAlt2, BiTimeFive } from 'react-icons/bi';
 import { RiGraduationCapLine } from 'react-icons/ri';
-import blogDetailsImage from '../assets/blog_details.jpg'
+import blogDetailsImage from '../../assets/blogs/blog_details.jpg'
 import { Search } from 'lucide-react';
 import { LuSearch, LuUser } from 'react-icons/lu';
 import { FiChevronRight, FiClock, FiMessageSquare, FiUser } from 'react-icons/fi';
-import man2 from '../assets/man2.png'
+import man2 from '../../assets/man2.png'
 import { TiSocialFacebook, TiSocialLinkedin, TiSocialPinterest, TiSocialTwitter } from 'react-icons/ti';
 export default function BlogDetails() {
 
@@ -57,10 +53,7 @@ export default function BlogDetails() {
   
   let resData = data?.data[0]
   const url = resData?.image?.formats?.thumbnail?.url;
-  console.log(resData);
-  console.log(url);
   
-
 
   return (
     <Stack as={Flex} w={'100%'} py={'10px'} alignItems={'center'} justifyContent={'center'} gap={1} >

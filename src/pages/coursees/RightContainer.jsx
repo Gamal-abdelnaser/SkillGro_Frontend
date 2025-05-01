@@ -121,7 +121,7 @@ function YouTubeEmbed({ url }) {
           <Image
             rounded={'md'}
             alt={'product image'}
-            src={`http://localhost:1337${url}`}
+            src={url}
             fit={'cover'}
             align={'center'}
             w={'100%'}

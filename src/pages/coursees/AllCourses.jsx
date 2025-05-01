@@ -1,51 +1,24 @@
 'use client'
 
-import { useColorMode, useColorModeValue } from '@/components/ui/color-mode';
 import { AspectRatio, Box, Button, Checkbox, Container, Flex, Grid, Heading, HStack, Icon, IconButton, Image, List, Portal, Select, SimpleGrid, Span, Stack, Text, VStack } from '@chakra-ui/react';
-
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import { IoIosArrowForward } from 'react-icons/io';
-import CourseCard from '@/components/CourseDetails/courseCard';
+import CourseCard from '@/pages/coursees/courseCard';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { courses } from '@/utilitis/data';
 
 
 export default function AllCourses() {
   const [all, setAll] = useState(false);
-  const getProductList = async () => {
-    const { data } = await axios.get(
-      `http://localhost:1337/api/courses?populate=image`
-    );
-    return data; // Ensure API structure is correct
-  };
 
-  const { isLoading, data, } = useQuery({
-    queryKey: ["courses"],
-    queryFn: getProductList
-  });
-
-  // if (isLoading) return <h3>Loading...</h3>;
-  if (isLoading) return <div>
-    <Grid templateColumns="repeat(auto-fill, minmax(300px, 1fr))" gap={6} margin={30}>
-      {Array.from({ length: 20 }, (_, idx) => (
-        //  <Skelaton key={idx} />
-        <div key={idx}></div>
-
-      )
-      )}
-
-    </Grid>
-  </div>;
-
-  const resData = data?.data;
-
+  const resData = courses;
   let DaraReversedArray = resData
   if (all) {
     DaraReversedArray = [...resData].reverse()
   } else {
     DaraReversedArray = resData
   }
+  // console.log(DaraReversedArray);
 
   return (
     <Stack as={Flex} w={'100%'} py={'10px'} alignItems={'center'} justifyContent={'center'} gap={1} >

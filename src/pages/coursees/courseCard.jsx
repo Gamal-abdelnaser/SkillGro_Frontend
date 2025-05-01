@@ -1,20 +1,25 @@
 // import { Heading } from 'lucide-react'
 import { Button, Card, Center, Flex, Heading, Image, Span, Stack, Text } from "@chakra-ui/react"
 import { Link } from "react-router"
-import { useColorMode } from "../ui/color-mode"
-import { useState } from "react";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { FaStar } from "react-icons/fa";
+import { CourseContext } from "@/pages/coursees/courseContext.jsx";
+import { useContext } from "react";
 export default function CourseCard({ course }) {
 
-  const url = course.image.formats.thumbnail.url;
+  const { setSelectedCourses } = useContext(CourseContext);
+
+  // const url = course.image.formats.thumbnail.url;
+  // console.log(course);
+
   return (
 
 
     <Card.Root p={'2px'} overflow="hidden" bg={'none'} borderRadius={'10px'} border={'1px solid #B5B5C3'} transition={'.5s'} _hover={{ boxShadow: "10px 8px 0px #d7d7df" }} >
       <Card.Body gap="2" p={4} >
         <Image
-          src={`${import.meta.env.VITE_SERVER_URL}${url}`}
+          // src={`${import.meta.env.VITE_SERVER_URL}${url}`}
+          src={course.image}
           alt="Green double couch with wooden legs"
           borderRadius={'15px'}
           // width={'200px'}
@@ -53,7 +58,13 @@ export default function CourseCard({ course }) {
             border={'1px solid #000'}
             boxShadow="6px 4px 0px #000" p="2" borderRadius={"30px"}
             _hover={{ boxShadow: "0px 0px 0px #000", }}
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            // onClick={() => (window.scrollTo({ top: 0, behavior: 'smooth' }), setSelectedCourses(course))}
+            onClick={() => {
+              // console.log(training);
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+              setSelectedCourses(course);
+              // navigate("/training-details");
+            }}
           >
             Start Free Trial  <ArrowRight fontSize={'30px'} />
           </Button>

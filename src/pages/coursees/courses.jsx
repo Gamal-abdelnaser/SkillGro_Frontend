@@ -1,15 +1,14 @@
-import CourseCard from '@/components/CourseDetails/courseCard';
-import { useColorModeValue } from '@/components/ui/color-mode';
+import CourseCard from '@/pages/coursees/courseCard';
 import { Button, Flex, Grid, Stack, Text } from '@chakra-ui/react';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-import { Heading } from 'lucide-react';
 import React, { useState } from 'react'
+import { courses } from '@/utilitis/data';
+// import { CourseContext } from './courseContext';
 
 const Courses = () => {
+  // const { setSelectedCourses } = useContext(CourseContext);
+
   const [all, setAll] = useState(false)
   const [activeTab, setActiveTab] = useState('all');
-  const [colored, setColored] = useState('#7f7e97');
 
   const tabs = [
     { id: 'all', label: 'All Courses', sts: true },
@@ -19,34 +18,8 @@ const Courses = () => {
   ];
   const bg = '#efeefe'
 
-  console.log(import.meta.env.VITE_SERVER_URL);
-  
-  const getProductList = async () => {
-    const { data } = await axios.get(
-      `${import.meta.env.VITE_SERVER_URL}/api/courses?populate=image`
-    );
-    return data; // Ensure API structure is correct
-  };
 
-  const { isLoading, data, } = useQuery({
-    queryKey: ["courses"],
-    queryFn: getProductList
-  });
-
-  // if (isLoading) return <h3>Loading...</h3>;
-  if (isLoading) return <div>
-    <Grid templateColumns="repeat(auto-fill, minmax(300px, 1fr))" gap={6} margin={30}>
-      {Array.from({ length: 20 }, (_, idx) => (
-        //  <Skelaton key={idx} />
-        <div key={idx}></div>
-
-      )
-      )}
-
-    </Grid>
-  </div>;
-
-  const resData = data?.data;
+  const resData = courses;
 
   let DaraReversedArray = resData
   if (all) {
@@ -54,6 +27,8 @@ const Courses = () => {
   } else {
     DaraReversedArray = resData
   }
+  // console.log(DaraReversedArray);
+
 
   return (
     <Stack as={Flex} alignItems={'center'} justifyContent={'center'} className={'coursess'} w={'100%'} mx={'auto'} pb={'50px'}>
@@ -113,9 +88,9 @@ const Courses = () => {
           </Flex>
 
         </Stack>
-        <Grid mx={'auto'} width={'90%'} templateColumns="repeat(auto-fill, minmax(250px, 1fr))" gap={6}  >
-          {DaraReversedArray?.map((course) => (
-            <CourseCard key={course.id} course={course} />
+        <Grid mx={'auto'} width={'90%'} templateColumns={{ md: "repeat(auto-fill, minmax(300px, 1fr))", base: "repeat(auto-fill, minmax(250px, 1fr))" }} gap={6}  >
+          {DaraReversedArray?.map((course, index) => (
+            <CourseCard key={index} course={course} />
           ))}
         </Grid>
       </Flex>

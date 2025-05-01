@@ -26,7 +26,6 @@ function SocialIcon() {
 }
 
 function TeamMemberCard({ member  }) {
-  const url = member.image.formats.thumbnail.url;
 
   return (
     <Flex direction="row" align="center">
@@ -39,7 +38,7 @@ function TeamMemberCard({ member  }) {
         bg="none"
       >
         <Image
-          src={`${import.meta.env.VITE_SERVER_URL}${url}`}
+          src={member.image}
           alt={member.name}
           w="100%"
           h="100%"
