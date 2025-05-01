@@ -2,13 +2,24 @@ import { Box, Card, Flex, Heading, Image, Span, Stack, Text } from "@chakra-ui/r
 import { MdOutlineCalendarToday } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { Link } from "react-router";
+import { useContext } from "react";
+import { BlogContext } from "./BlogContext";
 
 
 export default function BlogCard({ blog }) {
+  const { setSelectedBlogs } = useContext(BlogContext);
+  
 
   return (
       
-    <Card.Root as={Link} to={`/blog/${blog.id}`} p={'4px'} overflow="hidden" zIndex={1} maxW={'330px'} borderRadius={'10px'} bg={'#fff'} border={'1px solid #B5B5C3'} transition={'.5s'} _hover={{boxShadow: "rgb(202, 201, 214) 10px 10px" }} >
+    <Card.Root as={Link} to={`/blog/${blog.id}`} 
+        onClick={() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+          setSelectedBlogs(blog);
+        }} p={'4px'} overflow="hidden" zIndex={1} maxW={'330px'}
+         borderRadius={'10px'} bg={'#fff'} border={'1px solid #B5B5C3'}
+          transition={'.5s'} _hover={{boxShadow: "rgb(202, 201, 214) 10px 10px" }}
+    >
       <Card.Body gap={2} p={4} >
         <Box position={'relative'} > 
           <Image

@@ -58,7 +58,7 @@ function MobileButton() {
 
 function DesketopButton() {
   return(
-    <Button display={{md:'flex', base:'none'}}  as={Link} to={'/login'}  fontSize={'sm'} bg={'#FFC224'} borderRadius={'50px'} color={'#000'} fontWeight={700} variant={'link'} >
+    <Button display={{ md: 'flex', base: 'none' }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}  as={Link} to={'/login'}  fontSize={'sm'} bg={'#FFC224'} borderRadius={'50px'} color={'#000'} fontWeight={700} variant={'link'} >
       Sign In
     </Button>
   )

@@ -125,6 +125,8 @@ export default function Future() {
               </Stack>
               <Stack gap={{ base: 4, sm: 6 }} mt={4} direction={{ base: 'column', sm: 'row' }} display={'felx'} alignItems={'center'} >
                 <Button
+                  as={Link}
+                  to={'/all-courses'}
                   position={'relative'}
                   rounded={'full'}
                   size={'lg'}
@@ -138,6 +140,7 @@ export default function Future() {
                   onMouseOver={() =>setHovered(true)}
                   onMouseLeave={() =>setHovered(false)}
                   color={'#fff'}
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                   boxShadow="10px 6px 3px #000" p="6" borderRadius={"30px"}
                   _hover={{ bg: '#ffc224', boxShadow: "0px 0px 0px #000", color: '#000',   } }>
                   Start Free Trial <Image width={'35px'} color={'#fff'} right={0} src={ hovered ? arrow1 : arrow2} />

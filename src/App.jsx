@@ -23,13 +23,15 @@ import Registration from "./pages/login/regiester/Regiester"
 import AllCourses from "./pages/coursees/AllCourses"
 import BlogDetails from "./pages/blogs/blogDetails"
 import { CourseProvider } from "./pages/coursees/courseContext"
+import { BlogProvider } from "./pages/blogs/BlogContext"
 function App() {
 
 
 
   return (
-    <div className="app" class={'font-Poppins'}  >
+    <div className="app"   >
       <Navbar />
+      <BlogProvider>
       <CourseProvider >
         <Routes >
           <Route path="/" element={<Mian />} />
@@ -42,6 +44,7 @@ function App() {
           <Route path="/blog/:blogId" element={<BlogDetails />} />
         </Routes>
       </CourseProvider>
+      </BlogProvider>
       <Footer />
       {/* <ScrollToTopButton /> */}
     </div>

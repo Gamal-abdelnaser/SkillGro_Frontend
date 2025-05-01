@@ -49,7 +49,9 @@ export default function Navbar() {
           <Flex w={'100%'} justifyContent={'space-between'} px={{md:2, base:6}}>
             
             <Flex    alignItems={'center'} justify={{ base: 'center', md: 'start' }}>
-              <Link to={'/'} border='none'> <Image src={logo} minW={'100px'} maxW={'150px'} /></Link>
+              <Link to={'/'} border='none' 
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                > <Image src={logo} minW={'100px'} maxW={'150px'} /></Link>
               <Flex  display={{ base: 'none', md: 'flex' }} ml={10}>
                 <DesktopNav />
               </Flex>
